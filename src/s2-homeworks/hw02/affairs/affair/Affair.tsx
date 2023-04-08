@@ -2,6 +2,7 @@ import React from 'react'
 import { AffairType } from '../../HW2'
 import s from './Affair.module.css'
 import s2 from '../Affairs.module.css'
+import affairs from "../Affairs";
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -11,7 +12,7 @@ type AffairPropsType = {
 
 function Affair(props: AffairPropsType) {
     const deleteCallback = () => {
-        // need to fix
+        props.deleteAffairCallback(props.affair._id)
     }
 
     const nameClass = s.name + ' ' + s2[props.affair.priority]
